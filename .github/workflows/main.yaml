@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: installing step
-      - run: echo "Installing"
+        run: echo "Installing"
       
       - name: running test step
-      - run: echo "Running tests..."
+        run: echo "Running tests..."
