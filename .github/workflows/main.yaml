@@ -1,8 +1,11 @@
-name: "CI/CD Pipeline"
+name: CI CD
 on: push
 jobs:
-  print-job:
+  print-name:
     runs-on: ubuntu-latest
     steps:
-      - name: "Print Hello World"
-        run: echo "Hello World"
+      - name: installing step
+      - run: echo "Installing"
+      
+      - name: running test step
+      - run: echo "Running tests..."
