@@ -4,8 +4,11 @@ jobs:
   print-name:
     runs-on: ubuntu-latest
     steps:
-      - name: installing step
-        run: echo "Installing"
-      
-      - name: running test step
-        run: echo "Running tests..."
+
+      - name: installing node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: installing dependencies
+        run: npm install
