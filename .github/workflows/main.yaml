@@ -1,11 +1,16 @@
 name: CI CD
-on: push
+on: 
+  push:
+    branches: 
+      - main
+
 jobs:
-  print-name:
+  build-test:
     runs-on: ubuntu-latest
     steps:
       - name: getting code
         uses: actions/checkout@v3
+
       - name: setting up node
         uses: actions/setup-node@v3
         with:
@@ -17,4 +22,8 @@ jobs:
 
       - name: running tests
         run: npm test
+        working-directory: backend
+
+      - name: building code
+        run: npm run build
         working-directory: backend
