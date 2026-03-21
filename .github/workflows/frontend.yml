@@ -13,10 +13,11 @@ jobs:
       - name: setting up node
         uses: actions/setup-node@v3
         with:
-          node-version: "20"
+          node-version: 20
       
       - name: installing dependencies
         run: npm install
+        working-directory: frontend
       
       - name: building application
         run: npm build
