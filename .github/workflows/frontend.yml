@@ -1,0 +1,24 @@
+name: React app pipeline
+on:
+  push:
+    branches: [main]
+
+jobs:
+  frontend-cicd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out code
+        uses: actions/checkout@v3
+      
+      - name: setting up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      
+      - name: installing dependencies
+        run: npm install
+      
+      - name: building application
+        run: npm build
+        working-directory: frontend
+        
